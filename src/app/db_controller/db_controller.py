@@ -28,7 +28,7 @@ class DatabaseConnection:
         
         found_registries = self.db_session.query(table).filter(column_attr.in_(values)).all()
         
-        if found_registries is None:
+        if not found_registries:
             raise NotRegistryFound
         return found_registries
 

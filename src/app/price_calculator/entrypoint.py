@@ -4,6 +4,7 @@ from app.price_calculator.schemas.input_data import ItemsInput
 from app.price_calculator.schemas.output_data import ItemsOutput
 from app.price_calculator.products import ProductsManager
 from app.db_controller.db_controller import DatabaseConnection, get_db_connection
+from app.exceptions.exceptions import NotRegistryFound
 
 
 router = APIRouter()
@@ -21,6 +22,12 @@ async def calculate_prices(
         products_manager.process_items()
 
         return ItemsOutput(items=products_manager.get_results())
+    
+    except NotRegistryFound:
+        raise HTTPException(
+            status_code=400,
+            detail="Provider not found"
+        )
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
