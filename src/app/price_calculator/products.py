@@ -23,13 +23,13 @@ class ProvidersManager(IProvidersManager):
              
     def fetch_providers_data(self, provider_names: list) -> None:
         self._providers_data = self.db_conection.get_db_registries_by_column(
-            column="name",
+            column="provider_name",
             values=provider_names,
             table=HumbleProviders
         )
 
     def get_providers_discounts(self) -> list[float]:
-        return {provider.name: provider.discount for provider in self._providers_data}
+        return {provider.provider_name: provider.discount for provider in self._providers_data}
 
 
 class ProductsManager:

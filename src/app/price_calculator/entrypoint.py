@@ -15,7 +15,7 @@ async def calculate_prices(
     try:
         products_manager = ProductsManager(
             items=data.items,
-            db_conection=db_connection.db_session,
+            db_conection=db_connection,
         )
 
         products_manager.process_items()

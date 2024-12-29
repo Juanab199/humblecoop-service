@@ -6,7 +6,7 @@ class HumbleProviders(Model):
     __tablename__ = "providers"
     
     id = Column(Integer, primary_key=True, unique=True, autoincrement=True)
-    name = Column(String(50), unique=True)
+    provider_name = Column(String(50), unique=True)
     discount = Column(Float)
     
 
