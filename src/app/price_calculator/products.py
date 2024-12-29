@@ -47,6 +47,13 @@ class ProductsManager:
     def _process_item(self, item: ItemInput) -> dict:
         provider_name = item.provider
         unit_price = item.unitPrice
+        
+        if provider_name not in self._provider_discounts:
+            return ItemOutput(
+                sku = item.sku,
+                unitPriceWithDiscount = None,
+                error = f"Provider '{provider_name}' not found",
+            )
 
         discount = self._provider_discounts[provider_name]
         discounted_price = unit_price - (unit_price * discount)
@@ -54,6 +61,7 @@ class ProductsManager:
         return ItemOutput(
             sku = item.sku,
             unitPriceWithDiscount = discounted_price,
+            error = None,
         )
     
     def process_items(self):
