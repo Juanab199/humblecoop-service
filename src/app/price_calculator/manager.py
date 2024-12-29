@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 from app.price_calculator.models.db_models import HumbleProviders
 from app.price_calculator.schemas.input_data import ItemsInput, ItemInput
 from app.price_calculator.schemas.output_data import ItemOutput
-from app.db_controller.db_controller import DatabaseConnection
+from app.db.db_controller import DatabaseConnection
 
 
 class IProvidersManager(ABC):

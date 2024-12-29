@@ -1,6 +1,6 @@
 from app.price_calculator.schemas.input_data import ItemInput, ItemsInput
 from app.price_calculator.schemas.output_data import ItemOutput
-from app.price_calculator.products import ProductsManager
+from app.price_calculator.manager import ProductsManager
 
 def test_process_items(products_manager: ProductsManager):
     products_manager.process_items()

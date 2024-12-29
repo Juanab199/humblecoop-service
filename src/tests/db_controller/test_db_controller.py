@@ -1,5 +1,5 @@
 import pytest
-from app.db_controller.db_controller import DatabaseConnection
+from app.db.db_controller import DatabaseConnection
 from app.price_calculator.models.db_models import HumbleProviders
 from app.exceptions.exceptions import NotRegistryFound
 

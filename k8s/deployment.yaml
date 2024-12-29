@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-service
+  labels:
+    app: fastapi-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi-service
+  template:
+    metadata:
+      labels:
+        app: fastapi-service
+    spec:
+      containers:
+      - name: fastapi-container
+        image: us-central1-docker.pkg.dev/prueba-servicios-446022/pruebarepo/humblecoop-service:v1
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"

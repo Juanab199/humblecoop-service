@@ -1,6 +1,6 @@
 import pytest
 from fastapi.testclient import TestClient
-from app.db_controller.db_controller import DatabaseConnection, get_db_connection
+from app.db.db_controller import DatabaseConnection, get_db_connection
 from app.price_calculator.schemas.input_data import ItemsInput, ItemInput
 from app.main import app  # Asumimos que la app está en un archivo main.py
 

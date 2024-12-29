@@ -1,9 +1,9 @@
 import pytest
 from fastapi.testclient import TestClient
 
-from app.price_calculator.products import ProductsManager
+from app.price_calculator.manager import ProductsManager
 from app.price_calculator.schemas.input_data import ItemInput, ItemsInput
-from app.db_controller.db_controller import get_db_connection
+from app.db.db_controller import get_db_connection
 from app.main import app 
 
 
