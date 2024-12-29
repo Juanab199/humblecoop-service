@@ -49,7 +49,7 @@ class ProductsManager:
         unit_price = item.unitPrice
 
         discount = self._provider_discounts[provider_name]
-        discounted_price = unit_price * discount
+        discounted_price = unit_price - (unit_price * discount)
 
         return ItemOutput(
             sku = item.sku,
