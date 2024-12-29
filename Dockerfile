@@ -5,7 +5,7 @@ FROM ${BUILD_IMAGE} as base-build
 WORKDIR /src
 
 COPY requirements.txt /src/
-RUN pip install --upgrade && pip install -r requirements.txt
+RUN pip install --upgrade pip==24.0 && pip install -r requirements.txt
 
 COPY src /src
 
