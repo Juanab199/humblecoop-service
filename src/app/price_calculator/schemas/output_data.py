@@ -1,9 +1,9 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 from typing import List
 
 class ItemOutput(BaseModel):
     sku: str
-    unitPriceWithDiscount: float 
+    unitPriceWithDiscount: float
 
 class ItemsOutput(BaseModel):
     items: List[ItemOutput]

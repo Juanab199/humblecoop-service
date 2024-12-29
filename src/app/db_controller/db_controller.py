@@ -21,16 +21,16 @@ class DatabaseConnection:
             raise NotRegistryFound
         return found_registry
     
-    def get_db_registry_by_column(self, column, value, table):
+    def get_db_registries_by_column(self, column, values, table):
         column_attr = getattr(table, column, None)
         if column_attr is None:
             raise AttributeError(f"La tabla {table.__name__} no tiene una columna llamada {column}")
         
-        found_registry = self.db_session.query(table).filter(column_attr == value).first()
+        found_registries = self.db_session.query(table).filter(column_attr.in_(values)).all()
         
-        if found_registry is None:
+        if found_registries is None:
             raise NotRegistryFound
-        return found_registry
+        return found_registries
 
     def get_db_all_registries_from_table(self, table):
         registries = self.db_session.query(table).all()
