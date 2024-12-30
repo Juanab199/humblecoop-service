@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: fastapi-container
-        image: us-central1-docker.pkg.dev/prueba-servicios-446022/pruebarepo/humblecoop-service:v1
+        image: us-central1-docker.pkg.dev/prueba-servicios-446022/pruebarepo/humblecoop-service:v2
         ports:
         - containerPort: 80
         resources:
