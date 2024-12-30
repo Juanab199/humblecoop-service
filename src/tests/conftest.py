@@ -1,3 +1,4 @@
+import os
 import pytest
 from fastapi.testclient import TestClient
 
@@ -23,6 +24,10 @@ def client():
 
 @pytest.fixture(scope="module")
 def db_connection():
+    try:
+        os.chdir("src")
+    except:
+        pass
     db_connection_gen = get_db_connection()
     db_connection = next(db_connection_gen)
     try:
