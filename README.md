@@ -132,3 +132,10 @@ PS C:\...\humblecoop-service> .\.venv\Scripts\activate
 | 5  | Proveedor D | 0.25  |
 | 6  | Proveedor E | 0.50  |
 
+## La rutas y los endpoints del servicio desplegado en Google Cloud son las siguientes:
+
+* Ruta del servicio: https://humblecoop-service-233019416601.us-east1.run.app/
+
+* Ruta del endpoint del calculo de precios: https://humblecoop-service-233019416601.us-east1.run.app/calculate-prices
+
+* Ruta del swagger: https://humblecoop-service-233019416601.us-east1.run.app/v1/docs
